@@ -6,15 +6,14 @@ public class Solution {
         StringBuilder stringBuilder = new StringBuilder();
         int len = strings.length;
         for(int i=0;i<len;i++){
-            String x = strings[i];
-            if(isVowel(x.charAt(0))){
-                stringBuilder.append(x+"ma");
+            char[] x = strings[i].toCharArray();
+            if(isVowel(x[0])){
+                stringBuilder.append(x);
+                stringBuilder.append("ma");
             }else{
-                int slen = x.length();
-                for(int j=1;j<slen;j++){
-                    stringBuilder.append(x.charAt(j));
-                }
-                stringBuilder.append(x.charAt(0));
+                int slen = x.length;
+                stringBuilder.append(x,1,slen-1);
+                stringBuilder.append(x[0]);
                 stringBuilder.append("ma");
             }
             for(int j=0;j<i+1;j++){

@@ -2,22 +2,25 @@ package _700;
 
 
 class TreeNode {
-     int val;
-     TreeNode left;
-     TreeNode right;
-     TreeNode(int x) { val = x; }
- }
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+    }
+}
 
 public class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
         TreeNode cur = root;
-        while(cur!=null){
+        while (cur != null) {
             int t = cur.val;
-            if(t==val){
+            if (t == val) {
                 return cur;
-            }else if(t>val){
+            } else if (t > val) {
                 cur = cur.left;
-            }else{
+            } else {
                 cur = cur.right;
             }
         }

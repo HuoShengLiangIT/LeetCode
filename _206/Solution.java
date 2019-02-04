@@ -2,9 +2,12 @@ package _206;
 
 
 class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+    }
 }
 
 public class Solution {
@@ -14,7 +17,7 @@ public class Solution {
         //keep the loop invariants
         //pre is new head
         //cur is current node
-        while(cur!=null){
+        while (cur != null) {
             ListNode nextTemp = cur.next;
             cur.next = pre;
             pre = cur;

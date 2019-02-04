@@ -6,7 +6,7 @@ public class Solution {
         for (char c : S.toCharArray())
             if (Character.isLetter(c)) sb.append(c);
         sb.reverse();
-        for (int i = 0; i < S.length(); i++){
+        for (int i = 0; i < S.length(); i++) {
             char c = S.charAt(i);
             if (Character.isLetter(c)) continue;
             sb.insert(i, c);

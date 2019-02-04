@@ -9,36 +9,36 @@ public class Solution {
         //use LikedList simulate Stack
         LinkedList<Integer> result = new LinkedList<>();
         //loop ops
-        for(int i=0;i<len;i++){
+        for (int i = 0; i < len; i++) {
             String t = ops[i];
             //Switch statement judgment
-            switch(t){
+            switch (t) {
                 //if "C" remove Stack top
-                case "C":{
-                    sumPoints-=result.removeLast();
+                case "C": {
+                    sumPoints -= result.removeLast();
                     break;
                 }
                 //if "D" get Stack top and multiply 2,and add result to Stack top
-                case "D":{
-                    sumPoints+=result.getLast()*2;
-                    result.addLast(result.getLast()*2);
+                case "D": {
+                    sumPoints += result.getLast() * 2;
+                    result.addLast(result.getLast() * 2);
                     break;
                 }
                 //if "+" get Stack top and Stack top after element
                 //add x1+x2 to Stack top
-                case "+":{
+                case "+": {
                     int x1 = result.removeLast();
                     int x2 = result.getLast();
                     result.addLast(x1);
-                    sumPoints+=x1;
-                    sumPoints+=x2;
-                    result.addLast(x1+x2);
+                    sumPoints += x1;
+                    sumPoints += x2;
+                    result.addLast(x1 + x2);
                     break;
                 }
                 //if default , the String is an Integer
-                default:{
+                default: {
                     int currentPoints = Integer.parseInt(t);
-                    sumPoints+=currentPoints;
+                    sumPoints += currentPoints;
                     result.addLast(currentPoints);
                     break;
                 }

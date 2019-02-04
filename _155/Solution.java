@@ -12,19 +12,23 @@ public class Solution {
         System.out.println(minStack.getMin());
     }
 }
+
 class MinStack {
     private Node top = null;
-    /** initialize your data structure here. */
+
+    /**
+     * initialize your data structure here.
+     */
     public MinStack() {
         top = null;
     }
 
     public void push(int x) {
         int min = x;
-        if(top!=null&&top.min<x){
+        if (top != null && top.min < x) {
             min = top.min;
         }
-        top = new Node(x,top);
+        top = new Node(x, top);
         top.min = min;
     }
 
@@ -41,21 +45,21 @@ class MinStack {
     }
 
 
-    class Node{
+    class Node {
         private final int val;
         private Node next;
         private int min;
 
-        public Node(int val,Node next){
+        public Node(int val, Node next) {
             this.val = val;
             this.next = next;
         }
 
-        public int getVal(){
+        public int getVal() {
             return val;
         }
 
-        public Node getNext(){
+        public Node getNext() {
             return next;
         }
 

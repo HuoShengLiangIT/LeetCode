@@ -2,11 +2,13 @@ package _933;
 
 import java.util.ArrayList;
 
-public class Solution{
+public class Solution {
 
 }
+
 class RecentCounter {
     ArrayList<Integer> list = new ArrayList<Integer>();
+
     public RecentCounter() {
 
     }
@@ -14,8 +16,8 @@ class RecentCounter {
     public int ping(int t) {
         list.add(t);
         int count = 0;
-        for(int i=0;i<list.size();i++){
-            if(t-list.get(i)<=3000){
+        for (int i = 0; i < list.size(); i++) {
+            if (t - list.get(i) <= 3000) {
                 count++;
             }
         }

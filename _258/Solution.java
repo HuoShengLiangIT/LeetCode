@@ -3,8 +3,9 @@ package _258;
 public class Solution {
     /**
      * simple solution
+     *
      * @param num original num
-     * @return     result num
+     * @return result num
      */
     public int addDigits(int num) {
         //i is the result

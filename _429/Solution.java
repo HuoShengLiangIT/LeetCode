@@ -10,9 +10,10 @@ class Node {
     public int val;
     public List<Node> children;
 
-    public Node() {}
+    public Node() {
+    }
 
-    public Node(int _val,List<Node> _children) {
+    public Node(int _val, List<Node> _children) {
         val = _val;
         children = _children;
     }
@@ -20,17 +21,17 @@ class Node {
 
 public class Solution {
     public List<List<Integer>> levelOrder(Node root) {
-        if(root==null){
+        if (root == null) {
             return new ArrayList<>();
         }
         List<List<Integer>> listlist = new ArrayList<>();
         LinkedList<Node> nodelist = new LinkedList<Node>();
         nodelist.add(root);
-        while(!nodelist.isEmpty()){
+        while (!nodelist.isEmpty()) {
             //在此处可以获取到该层有多少个节点
             int len = nodelist.size();
             ArrayList<Integer> intlist = new ArrayList<Integer>(len);
-            for(int i=0;i<len;i++){
+            for (int i = 0; i < len; i++) {
                 Node node = nodelist.removeFirst();
                 nodelist.addAll(node.children);
                 intlist.add(node.val);
